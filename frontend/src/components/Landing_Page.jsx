@@ -1,21 +1,22 @@
 import './styles/landing.css'
-import { Link } from 'react-router-dom';
+import Search_bar from './Search_bar';
+import Header_part from './Header_part';
 
-export default function Landing_Page() {
+export default function Landing_page() {
     
     return (
         <>
-          <div className='landing-header'>
-            <Link to='/'><h1 className='landing-title'>Read_MangaKas</h1></Link>
-            <div className="routes">
-                <Link to='/login'><button>Login</button></Link>
-                <Link to='/register'><button>Register</button></Link>
+            <div className="landing-header">
+                <Header_part />
             </div>
-          </div>
-
           <div className='landing-body'>
-            {/* displays top rated mangas being reed all time on the site */}
-            <div className='top-manga-display'></div>
+            <div className='top-manga-display'>
+              {/* displays top rated mangas being reed all time on the site */}
+            </div>
+
+            <div className="search-bar">
+              <Search_bar />
+            </div>
           </div>
         </>
     )

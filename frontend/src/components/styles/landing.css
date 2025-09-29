@@ -1,17 +1,14 @@
-.landing-header {
-    border: 1px solid red;
-}
-
-.landing-title {
-    text-decoration: dashed;
-}
-
 .landing-body {
-    border: 1px solid blue;
     height: 20cm;
 }
 
 .top-manga-display {
-    border: 1px solid violet;
+    padding: 10px;
     height: 10cm;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
 }
