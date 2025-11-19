@@ -1,0 +1,10 @@
+.register-body {
+    border: 1px pink solid;
+    display: flex;
+    justify-content: center;
+}
+
+.register-form {
+    border: 1px black solid;
+    border-radius: 10px;
+}

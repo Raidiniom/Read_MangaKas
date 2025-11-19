@@ -1,4 +1,4 @@
-import './styles/header_part.css'
+import '../styles/header_part.css'
 import { Link } from 'react-router-dom';
 import Button_login from './Button_login';
 import Button_register from './Button_register';
