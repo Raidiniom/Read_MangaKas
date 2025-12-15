@@ -1,10 +1,379 @@
+/* Register Page Styles */
 .register-body {
-    border: 1px pink solid;
-    display: flex;
-    justify-content: center;
+  min-height: 100vh;
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional: Add a subtle gradient overlay for visual interest */
+.register-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(149, 44, 210, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(44, 210, 149, 0.1) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
 }
 
 .register-form {
-    border: 1px black solid;
-    border-radius: 10px;
+  background: var(--surface);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.register-title {
+  text-align: center;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.register-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.register-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.register-field label {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.register-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.register-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(149, 44, 210, 0.2);
+}
+
+.register-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--primary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.register-form button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(149, 44, 210, 0.3);
+}
+
+.register-form button:active {
+  transform: translateY(0);
+}
+
+/* Optional: Add link to login */
+.register-form p {
+  text-align: center;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.register-form a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.register-form a:hover {
+  color: #26bf88;
+  text-decoration: underline;
+}
+
+/* Password strength indicator */
+/* Password strength indicator */
+.password-strength-container {
+  margin-top: 0.25rem;
+}
+
+.strength-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.strength-label span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.strength-label .strength-text {
+  font-weight: 500;
+}
+
+.strength-text.weak {
+  color: #ff4444;
+}
+
+.strength-text.medium {
+  color: #ffaa00;
+}
+
+.strength-text.strong {
+  color: var(--accent);
+}
+
+.strength-meter {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--background);
+  overflow: hidden;
+  position: relative;
+}
+
+.strength-bar {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.strength-bar.weak {
+  background-color: #ff4444;
+  width: 33%;
+}
+
+.strength-bar.medium {
+  background-color: #ffaa00;
+  width: 66%;
+}
+
+.strength-bar.strong {
+  background-color: var(--accent);
+  width: 100%;
+}
+
+/* Strength requirement list */
+.strength-requirements {
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+}
+
+.strength-requirements li {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+  list-style-type: none;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.strength-requirements li::before {
+  content: '○';
+  position: absolute;
+  left: -1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+}
+
+.strength-requirements li.requirement-met {
+  color: var(--accent);
+}
+
+.strength-requirements li.requirement-met::before {
+  content: '✓';
+  color: var(--accent);
+}
+
+.strength-requirements li.requirement-failed {
+  color: #ff4444;
+}
+
+.strength-requirements li.requirement-failed::before {
+  content: '✗';
+  color: #ff4444;
+}
+
+/* Error message styling */
+.error-message {
+  color: #ff4444;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.register-field.error .register-input {
+  border-color: #ff4444;
+  background: rgba(255, 68, 68, 0.05);
+}
+
+.register-field.error label {
+  color: #ff4444;
+}
+
+/* Success message styling */
+.success-message {
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.register-field.success .register-input {
+  border-color: var(--accent);
+  background: rgba(44, 210, 149, 0.05);
+}
+
+/* Terms and conditions checkbox */
+.terms-field {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.terms-field input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.terms-field label {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.terms-field a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.terms-field a:hover {
+  text-decoration: underline;
+}
+
+/* Loading state for button */
+.register-form button.loading {
+  position: relative;
+  color: transparent;
+}
+
+.register-form button.loading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .register-form {
+    padding: 2rem 1.5rem;
+    margin: 0 1rem;
+    gap: 1.25rem;
+  }
+  
+  .register-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Validation icon for fields */
+.register-field {
+  position: relative;
+}
+
+.validation-icon {
+  position: absolute;
+  right: 12px;
+  top: 38px;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.register-field.success .validation-icon {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.register-field.error .validation-icon {
+  opacity: 1;
+  color: #ff4444;
 }
