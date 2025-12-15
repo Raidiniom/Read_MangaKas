@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
 const Card = styled.div`
-  background-color: #44444E;
+  background-color: var(--surface);
   border-radius: 12px;
   overflow: hidden;
   width: 180px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+
   &:hover {
-    transform: scale(1.05);
+    transform: translateY(-6px);
+    border-color: var(--primary);
+    box-shadow: 0 8px 20px rgba(149, 44, 210, 0.2);
   }
 `;
 
@@ -19,17 +23,36 @@ const Cover = styled.img`
 `;
 
 const Info = styled.div`
-  padding: 10px;
+  padding: 12px;
   text-align: center;
 `;
 
-export default function MangaCard({ title, cover, description}) {
+const Title = styled.h4`
+  color: var(--text-primary);
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  font-weight: 600;
+`;
+
+const Description = styled.p`
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+export default function MangaCard({ title, cover, description }) {
   return (
     <Card>
       <Cover src={cover} alt={title} />
       <Info>
-        <h4>{title}</h4>
-        <p>{description}</p>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
       </Info>
     </Card>
   );

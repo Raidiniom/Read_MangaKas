@@ -25,25 +25,12 @@ export default function Landing_page() {
     { title: "Haikyuu!!", cover: "/covers/haikyuu.jpg", description: "Short boy aims for volleyball greatness" },
     { title: "Black Clover", cover: "/covers/blackclover.jpg", description: "Magicless boy strives to become Wizard King" },
     { title: "JoJo's Bizarre Adventure", cover: "/covers/jojo.jpg", description: "Multi-generational supernatural battles" },
-    { title: "The Promised Neverland", cover: "/covers/promisedneverland.jpg", description: "Orphans discover dark farm secrets" },
-    { title: "Dr. Stone", cover: "/covers/drstone.jpg", description: "Genius revives civilization after petrification" },
-    { title: "Vinland Saga", cover: "/covers/vinlandsaga.jpg", description: "Viking seeks revenge in historical epic" },
-    { title: "Berserk", cover: "/covers/berserk.jpg", description: "Dark fantasy with mercenary protagonist" },
-    { title: "Solo Leveling", cover: "/covers/sololeveling.jpg", description: "Weakest hunter becomes overpowered" },
-    { title: "Blue Lock", cover: "/covers/bluelock.jpg", description: "Intense soccer training to create ultimate striker" },
-    { title: "Mob Psycho 100", cover: "/covers/mobpsycho.jpg", description: "Psychic boy navigates adolescence" },
-    { title: "Hells Paradise", cover: "/covers/hellsparadise.jpg", description: "Criminals seek elixir on mysterious island" },
-    { title: "Dandadan", cover: "/covers/dandadan.jpg", description: "Supernatural romantic comedy adventure" },
-    { title: "Oshi no Ko", cover: "/covers/oshinoko.jpg", description: "Twins navigate entertainment industry" },
-    { title: "Kaiju No. 8", cover: "/covers/kaiju8.jpg", description: "Man gains kaiju powers in monster-battling organization" },
-    { title: "Sakamoto Days", cover: "/covers/sakamotodays.jpg", description: "Retired assassin runs convenience store" }
   ];
 
   return (
     <>
-      <div className="landing-header">
-        <Header_part />
-      </div>
+      <Header_part />
+
       <div className="landing-body">
         <div className="top-manga-display">
           <div className="search-bar">

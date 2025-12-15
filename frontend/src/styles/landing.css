@@ -34,22 +34,6 @@
   margin-bottom: 2rem;
 }
 
-.featured-section {
-  margin: 2rem 0;
-  padding: 1rem;
-  background: var(--surface);
-  border-radius: 12px;
-  border: 1px solid var(--border);
-}
-
-.featured-section h2 {
-  color: var(--text-primary);
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  padding-left: 0.5rem;
-  border-left: 4px solid var(--primary);
-}
-
 .manga-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -61,39 +45,6 @@
   border: 1px solid var(--border);
 }
 
-/* Add styling for manga cards in the grid */
-.manga-card {
-  background: var(--background);
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  transition: transform 0.2s, border-color 0.2s;
-}
-
-.manga-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--primary);
-}
-
-.manga-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-.manga-card h3 {
-  padding: 0.75rem;
-  color: var(--text-primary);
-  font-size: 1rem;
-  margin: 0;
-  border-top: 1px solid var(--border);
-}
-
-.manga-card .manga-info {
-  padding: 0 0.75rem 0.75rem;
-  color: var(--text-muted);
-  font-size: 0.875rem;
-}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -168,7 +119,6 @@
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.2s;
 }
 
 .button:hover {
@@ -199,41 +149,4 @@
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 2px rgba(149, 44, 210, 0.2);
-}
-
-/* Badges and tags */
-.manga-tag {
-  display: inline-block;
-  background: var(--primary);
-  color: var(--text-primary);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  margin-right: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-
-.rating-badge {
-  background: var(--accent);
-  color: var(--background);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 0.875rem;
-}
-
-/* Section headers */
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.75rem;
-}
-
-.section-header h2 {
-  color: var(--text-primary);
-  margin: 0;
-  font-size: 1.5rem;
 }
