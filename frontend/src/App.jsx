@@ -8,12 +8,13 @@ function App() {
 
   return (
     <>
-      <div>
+      {/* Comment this div out if this is in production */}
+      {/* <div>
         <Link to="/">Home</Link> |{" "}
         <Link to="/login">Login</Link> |{" "}
         <Link to="/register">Register</Link> |{" "}
         <Link to="/browse">Browse</Link>
-      </div>
+      </div> */}
       
       <Routes>
         <Route path='/' element={<Landing_page />} />
