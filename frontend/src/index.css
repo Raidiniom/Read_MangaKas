@@ -1,19 +1,6 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #363636;
+  background-color: #0F0F14;
   color: #ffffff;
-}
-
-h1, h2, h3, h4, h5 {
-  color: #D3DAD9;
-}
-
-a {
-  color: #D3DAD9;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #715A5A;
 }
