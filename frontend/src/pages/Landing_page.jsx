@@ -1,17 +1,42 @@
 import MangaCard from "../components/Manga_Card";
 import Header_part from "../components/Header_part";
 import Search_bar from "../components/Search_bar";
+import MangaCarousel from "../components/Manga_Carousel";
 
 import "../styles/landing.css";
 
 export default function Landing_page() {
   const mangas = [
-    { title: "Naruto", cover: "/covers/naruto.jpg" },
-    { title: "One Piece", cover: "/covers/onepiece.jpg" },
-    { title: "Attack on Titan", cover: "/covers/aot.jpg" },
-    { title: "Naruto", cover: "/covers/naruto.jpg" },
-    { title: "One Piece", cover: "/covers/onepiece.jpg" },
-    { title: "Attack on Titan", cover: "/covers/aot.jpg" },
+    { title: "Naruto", cover: "/covers/naruto.jpg", description: "An energetic ninja seeks recognition" },
+    { title: "One Piece", cover: "/covers/onepiece.jpg", description: "Pirates search for the ultimate treasure" },
+    { title: "Attack on Titan", cover: "/covers/aot.jpg", description: "Humanity battles giant humanoid creatures" },
+    { title: "My Hero Academia", cover: "/covers/mha.jpg", description: "Quirkless boy inherits superpower legacy" },
+    { title: "Jujutsu Kaisen", cover: "/covers/jjk.jpg", description: "Student fights curses in supernatural Tokyo" },
+    { title: "Chainsaw Man", cover: "/covers/chainsawman.jpg", description: "Devil hunter merges with chainsaw devil" },
+    { title: "Demon Slayer", cover: "/covers/demonslayer.jpg", description: "Kindhearted boy becomes demon slayer" },
+    { title: "Tokyo Revengers", cover: "/covers/tokyorevengers.jpg", description: "Delinquent time-travels to save his ex-girlfriend" },
+    { title: "Spy x Family", cover: "/covers/spyfamily.jpg", description: "Spy creates fake family for mission" },
+    { title: "One Punch Man", cover: "/covers/onepunchman.jpg", description: "Overpowered hero seeks worthy opponent" },
+    { title: "Death Note", cover: "/covers/deathnote.jpg", description: "Student gains deadly notebook" },
+    { title: "Fullmetal Alchemist", cover: "/covers/fma.jpg", description: "Brothers search for Philosopher's Stone" },
+    { title: "Hunter x Hunter", cover: "/covers/hunterxhunter.jpg", description: "Boy becomes Hunter to find his father" },
+    { title: "Dragon Ball", cover: "/covers/dragonball.jpg", description: "Saiyan warrior protects Earth" },
+    { title: "Bleach", cover: "/covers/bleach.jpg", description: "Teenager becomes Soul Reaper" },
+    { title: "Haikyuu!!", cover: "/covers/haikyuu.jpg", description: "Short boy aims for volleyball greatness" },
+    { title: "Black Clover", cover: "/covers/blackclover.jpg", description: "Magicless boy strives to become Wizard King" },
+    { title: "JoJo's Bizarre Adventure", cover: "/covers/jojo.jpg", description: "Multi-generational supernatural battles" },
+    { title: "The Promised Neverland", cover: "/covers/promisedneverland.jpg", description: "Orphans discover dark farm secrets" },
+    { title: "Dr. Stone", cover: "/covers/drstone.jpg", description: "Genius revives civilization after petrification" },
+    { title: "Vinland Saga", cover: "/covers/vinlandsaga.jpg", description: "Viking seeks revenge in historical epic" },
+    { title: "Berserk", cover: "/covers/berserk.jpg", description: "Dark fantasy with mercenary protagonist" },
+    { title: "Solo Leveling", cover: "/covers/sololeveling.jpg", description: "Weakest hunter becomes overpowered" },
+    { title: "Blue Lock", cover: "/covers/bluelock.jpg", description: "Intense soccer training to create ultimate striker" },
+    { title: "Mob Psycho 100", cover: "/covers/mobpsycho.jpg", description: "Psychic boy navigates adolescence" },
+    { title: "Hells Paradise", cover: "/covers/hellsparadise.jpg", description: "Criminals seek elixir on mysterious island" },
+    { title: "Dandadan", cover: "/covers/dandadan.jpg", description: "Supernatural romantic comedy adventure" },
+    { title: "Oshi no Ko", cover: "/covers/oshinoko.jpg", description: "Twins navigate entertainment industry" },
+    { title: "Kaiju No. 8", cover: "/covers/kaiju8.jpg", description: "Man gains kaiju powers in monster-battling organization" },
+    { title: "Sakamoto Days", cover: "/covers/sakamotodays.jpg", description: "Retired assassin runs convenience store" }
   ];
 
   return (
@@ -25,11 +50,13 @@ export default function Landing_page() {
             <Search_bar />
           </div>
 
-          <h2>Top Manga</h2>
+          <MangaCarousel mangalist={mangas} />
+
+          <h2>Popular Mangas</h2>
 
           <div className="manga-grid">
             {mangas.map((m, i) => (
-              <MangaCard key={i} title={m.title} cover={m.cover} />
+              <MangaCard key={i} title={m.title} cover={m.cover} description={m.description} />
             ))}
           </div>
 

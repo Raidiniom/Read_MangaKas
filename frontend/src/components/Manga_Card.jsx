@@ -7,7 +7,6 @@ const Card = styled.div`
   width: 180px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.4);
   transition: transform 0.2s ease-in-out;
-
   &:hover {
     transform: scale(1.05);
   }
@@ -24,12 +23,13 @@ const Info = styled.div`
   text-align: center;
 `;
 
-export default function MangaCard({ title, cover }) {
+export default function MangaCard({ title, cover, description}) {
   return (
     <Card>
       <Cover src={cover} alt={title} />
       <Info>
         <h4>{title}</h4>
+        <p>{description}</p>
       </Info>
     </Card>
   );

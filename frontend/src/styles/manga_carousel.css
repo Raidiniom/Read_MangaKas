@@ -1,0 +1,104 @@
+/* Custom Carousel Styles */
+.custom-carousel {
+  margin: 2rem 0;
+  position: relative;
+}
+
+.carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carousel-btn {
+  background: #333;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+  background: #555;
+}
+
+.slide-counter {
+  font-weight: bold;
+  min-width: 60px;
+  text-align: center;
+}
+
+.carousel-container {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  display: flex;
+  flex: 0 0 100%;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: space-around;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  padding: 0;
+}
+
+.carousel-dots .dot.active {
+  background: #333;
+  transform: scale(1.2);
+}
+
+/* Swiper Styles */
+.manga-carousel-wrapper {
+  padding: 1rem 0;
+}
+
+.manga-carousel-wrapper .swiper {
+  padding: 1rem;
+}
+
+.manga-carousel-wrapper .swiper-button-next,
+.manga-carousel-wrapper .swiper-button-prev {
+  color: #333;
+  background: rgba(255, 255, 255, 0.8);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.manga-carousel-wrapper .swiper-button-next:after,
+.manga-carousel-wrapper .swiper-button-prev:after {
+  font-size: 1.2rem;
+}
