@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import "../styles/browse_page.css";
 
 export default function Browse_page() {
     
     return (
         <>
-            <h1>Browse Page</h1>
+            <div className="browse-body">
+                <h1>Browse Page</h1>
+            </div>
         </>
     )
 }

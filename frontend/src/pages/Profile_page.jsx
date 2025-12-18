@@ -38,27 +38,29 @@ export default function Profile_page() {
 
     return (
         <>
-            <div className="user-details">
-                <img className="user-profile-img" src="/site_logo.png" alt="Your Profile Picture" />
-                <h1 className="user-name">{username}</h1>
-            </div>
-
-            <div className="manga-container">
-                <div className="user-bookmarks">
-                    <h2 className="container-title">Bookmarks</h2>
-                    <div className="manga-list">
-                        {bookmarked.map((manga, index) => (
-                            <Manga_bar key={index} title={manga.title} />
-                        ))}
-                    </div>
+            <div className="profile-body">
+                <div className="user-details">
+                    <img className="user-profile-img" src="/site_logo.png" alt="Your Profile Picture" />
+                    <h1 className="user-name">{username}</h1>
                 </div>
 
-                <div className="user-favorites">
-                    <h2 className="container-title">Favorites</h2>
-                    <div className="manga-list">
-                        {favorites.map((manga, index) => (
-                            <Manga_bar key={index} title={manga.title} />
-                        ))}
+                <div className="manga-container">
+                    <div className="user-bookmarks">
+                        <h2 className="container-title">Bookmarks</h2>
+                        <div className="manga-list">
+                            {bookmarked.map((manga, index) => (
+                                <Manga_bar key={index} title={manga.title} />
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="user-favorites">
+                        <h2 className="container-title">Favorites</h2>
+                        <div className="manga-list">
+                            {favorites.map((manga, index) => (
+                                <Manga_bar key={index} title={manga.title} />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

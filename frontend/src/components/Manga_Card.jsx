@@ -46,6 +46,8 @@ const Description = styled.p`
   text-overflow: ellipsis;
 `;
 
+
+
 export default function MangaCard({ title, cover, description }) {
   return (
     <Card>
