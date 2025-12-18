@@ -1,5 +1,6 @@
-
 import { useParams } from "react-router-dom";
+
+// TODO: Have a proper draft layout for this page
 
 export default function Manga_Page() {
     // const { title } = useParams();

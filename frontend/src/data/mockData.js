@@ -1,3 +1,7 @@
+/**
+ * ATTETION: this is the mock data file where it just stores simple manga data
+ */
+
 export const mockMangas = [
   {
     id: 1,

@@ -1,6 +1,5 @@
 import MangaCard from "../components/Manga_Card";
 import Header_part from "../components/Header_part";
-import Search_bar from "../components/Search_bar";
 import MangaCarousel from "../components/Manga_Carousel";
 
 import { mockMangas, getTopRatedMangas } from "../data/mockData";
@@ -13,13 +12,11 @@ export default function Landing_page() {
 
   return (
     <>
-      <Header_part />
 
       <div className="landing-body">
+        <Header_part />
+        
         <div className="top-manga-display">
-          <div className="search-bar">
-            <Search_bar />
-          </div>
 
           <MangaCarousel mangalist={topMangas} />
 

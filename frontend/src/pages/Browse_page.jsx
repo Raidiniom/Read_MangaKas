@@ -1,5 +1,7 @@
 import "../styles/browse_page.css";
 
+// TODO: Have proper layout for this page, this one should have the search functionality here
+
 export default function Browse_page() {
     
     return (
