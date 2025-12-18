@@ -4,7 +4,7 @@ export default function Browse_page() {
     
     return (
         <>
-            <h1>browse page</h1>
+            <h1>Browse Page</h1>
         </>
     )
 }

@@ -1,14 +1,3 @@
-:root {
-  --primary:        #952CD2;  /* purple */
-  --primary-hover:  #7E22B8;
-  --accent:         #2CD295;  /* teal */
-  --background:     #0F0F14;
-  --surface:        #1A1A24;
-  --text-primary:   #FFFFFF;
-  --text-muted:     #B8B8C2;
-  --border:         #2A2A3A;
-}
-
 .landing-body {
   min-height: 100vh;
   background: var(--background);
