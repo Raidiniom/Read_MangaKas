@@ -18,13 +18,6 @@ export default function MangaCarousel({ mangalist, itemsToShow = 5}) {
         setCurrentIndex((prevIndex) => prevIndex === 0 ? totalItems - 1 : prevIndex - 1);
     }
 
-    const getVisibleMangas = () => {
-        const start = currentIndex * itemsToShow;
-        const end = start + itemsToShow;
-
-        return mangalist.slice(start, end);
-    }
-
     return (
         <div className="custom-carousel">
             <div className="carousel-header">
@@ -50,12 +43,10 @@ export default function MangaCarousel({ mangalist, itemsToShow = 5}) {
                     <div key={slideIndex} className="carousel-slide">
                     {mangalist
                         .slice(slideIndex * itemsToShow, (slideIndex + 1) * itemsToShow)
-                        .map((manga, i) => (
+                        .map((manga) => (
                         <MangaCard
-                            key={i}
-                            title={manga.title}
-                            cover={manga.cover}
-                            description={manga.description}
+                            key={manga.id}
+                            manga={manga}
                         />
                         ))}
                     </div>
