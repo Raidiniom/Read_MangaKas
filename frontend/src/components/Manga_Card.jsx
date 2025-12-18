@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 
 const Card = styled.div`
@@ -46,14 +48,16 @@ const Description = styled.p`
   text-overflow: ellipsis;
 `;
 
-export default function MangaCard({ title, cover, description }) {
+export default function MangaCard({ manga = {} }) {
   return (
-    <Card>
-      <Cover src={cover} alt={title} />
-      <Info>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-      </Info>
-    </Card>
+    <Link to={`/manga/${manga.title.toLowerCase().replace(/\s+/g, '-')}`} style={{ textDecoration: 'none' }}>
+      <Card>
+        <Cover src={manga.cover} alt={`${manga.title} Cover`} />
+        <Info>
+          <Title>{manga.title}</Title>
+          <Description>{manga.description}</Description>
+        </Info>
+      </Card>
+    </Link>
   );
 }

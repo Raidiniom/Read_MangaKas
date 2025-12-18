@@ -1,18 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { mockMangas } from '../data/mockData';
 
-const Search_bar = () => {
+/**
+ * Search Functionality
+ * Uses the Search_bar component
+ * 
+ * NOTE: This is a basic implementation both in functionality, UI/UX, and with mock data
+*/
+
+const Search_bar = ({ onSearch }) => {
+  const [query, setQuery] = useState('');
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (!query.trim()) return;
+    
+    // Search through mock data
+    const results = mockMangas.filter(manga => 
+      manga.title.toLowerCase().includes(query.toLowerCase()) ||
+      manga.title_jp?.toLowerCase().includes(query.toLowerCase()) ||
+      manga.author?.toLowerCase().includes(query.toLowerCase()) ||
+      manga.tags?.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
+    );
+    
+    // Pass results to parent component
+    if (onSearch) {
+      onSearch(results);
+    }
+    
+    console.log('[DEBUG] Search results:', results);
+  };
+
   return (
     <StyledWrapper>
-      <div className="searchBox">
-        <input className="searchInput" type="text" name placeholder="Search for manga..." />
-        <button className="searchButton" aria-label="Search">
+      <form className="searchBox" onSubmit={handleSearch}>
+        <input 
+          className="searchInput" 
+          type="text" 
+          placeholder="Search for manga..." 
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <button className="searchButton" type="submit" aria-label="Search">
           <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none">
             <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" 
                   stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
-      </div>
+      </form>
     </StyledWrapper>
   );
 }
