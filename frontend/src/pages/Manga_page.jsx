@@ -1,19 +1,19 @@
 import { useParams } from "react-router-dom";
+import Manga_header from "../components/Manga_header";
 
-// TODO: Have a proper draft layout for this page
+import { getMangaBySlug } from "../data/mockData";
 
 export default function Manga_Page() {
-    // const { title } = useParams();
     const { title: slug } = useParams();
-    const title = slug ? decodeURIComponent(slug).replace(/-/g, " ") : null;
+    const manga = getMangaBySlug(slug);
 
     return (
         <>
-            {title ? 
-                <p>Displaying manga with title: {title}</p>
-                :
-                <p>No manga title provided.</p>
-            }
+            <div className="manga-body">
+                <Manga_header manga_id={manga.id} />
+                <div className=""></div>
+                <div className=""></div>
+            </div>
         </>
     )
 }

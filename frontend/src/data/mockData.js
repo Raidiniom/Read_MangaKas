@@ -470,12 +470,18 @@ export const getMangaBySlug = (slug) => {
   return mockMangas.find(manga => manga.slug === slug) || null;
 };
 
+export const getMangaById = (id) => {
+  return mockMangas.find(manga => manga.id === id) || null;
+};
+
 export const searchMangas = (query, limit) => {
   if (!query) return mockMangas.slice(0, limit);
   
   const lowerQuery = query.toLowerCase();
+
   return mockMangas
     .filter(manga => 
+      manga.id ||
       manga.title.toLowerCase().includes(lowerQuery) ||
       manga.title_jp?.toLowerCase().includes(lowerQuery) ||
       manga.author?.toLowerCase().includes(lowerQuery) ||
