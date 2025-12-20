@@ -1,6 +1,6 @@
-import MangaCard from "../components/Manga_Card";
+import MangaCard from "../components/Manga_card";
 import Header_part from "../components/Header_part";
-import MangaCarousel from "../components/Manga_Carousel";
+import MangaCarousel from "../components/Manga_carousel";
 
 import { mockMangas, getTopRatedMangas } from "../data/mockData";
 
@@ -12,7 +12,6 @@ export default function Landing_page() {
 
   return (
     <>
-
       <div className="landing-body">
         <Header_part />
         
@@ -23,8 +22,8 @@ export default function Landing_page() {
           <h2>Popular Mangas</h2>
 
           <div className="manga-grid">
-            {popularMangas.map((manga) => (
-              <MangaCard key={manga.id} manga={manga} />
+            {popularMangas.map((manga, index) => (
+              <MangaCard key={index} manga_id={manga.id} />
             ))}
           </div>
 

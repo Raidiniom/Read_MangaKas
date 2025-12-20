@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import MangaCard from "./Manga_Card";
+import MangaCard from "./Manga_card";
+
 import "../styles/manga_carousel.css";
 
 export default function MangaCarousel({ mangalist, itemsToShow = 5}) {
@@ -35,6 +36,7 @@ export default function MangaCarousel({ mangalist, itemsToShow = 5}) {
                 </div>
             </div>
 
+            {/* MangaCard part */}
             <div className="carousel-container">
                 <div className="carousel-track" style={{
                 transform: `translateX(-${currentIndex * 100}%)`
@@ -43,10 +45,10 @@ export default function MangaCarousel({ mangalist, itemsToShow = 5}) {
                     <div key={slideIndex} className="carousel-slide">
                     {mangalist
                         .slice(slideIndex * itemsToShow, (slideIndex + 1) * itemsToShow)
-                        .map((manga) => (
+                        .map((manga, index) => (
                         <MangaCard
-                            key={manga.id}
-                            manga={manga}
+                            key={index}
+                            manga_id={manga.id}
                         />
                         ))}
                     </div>
