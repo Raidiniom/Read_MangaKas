@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { getMangaById } from "../data/mockData"
 
-export default function MangaCard({ manga_id }) {
+export default function Manga_card({ manga_id }) {
   const manga = getMangaById(manga_id);
 
   return (

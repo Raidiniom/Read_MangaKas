@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import MangaCard from "./Manga_card";
+import Manga_card from "./Manga_card";
 
 import "../styles/manga_carousel.css";
 
-export default function MangaCarousel({ mangalist, itemsToShow = 5}) {
+export default function Manga_carousel({ mangalist, itemsToShow = 5}) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
 
@@ -46,7 +46,7 @@ export default function MangaCarousel({ mangalist, itemsToShow = 5}) {
                     {mangalist
                         .slice(slideIndex * itemsToShow, (slideIndex + 1) * itemsToShow)
                         .map((manga, index) => (
-                        <MangaCard
+                        <Manga_card
                             key={index}
                             manga_id={manga.id}
                         />
