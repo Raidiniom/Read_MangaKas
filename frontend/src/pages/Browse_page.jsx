@@ -1,13 +1,31 @@
+import Header_part from "../components/Header_part";
+import Manga_carousel from "../components/Manga_carousel";
 import "../styles/browse_page.css";
 
-// TODO: Have proper layout for this page, this one should have the search functionality here
+import { getRandomMangas } from "../data/mockData"; 
+import Search_bar from "../components/Search_bar";
 
 export default function Browse_page() {
+    const manglist1 = getRandomMangas(15)
+    const manglist2 = getRandomMangas(15)
+    const manglist3 = getRandomMangas(15)
     
     return (
         <>
             <div className="browse-body">
-                <h1>Browse Page</h1>
+                <Header_part />
+
+                <div className="browse-container">
+                    <div className="trending-container">
+                        <Manga_carousel title="Trending" mangalist={manglist1} />
+                    </div>
+                    <div className="popular-container">
+                        <Manga_carousel title="Popular" mangalist={manglist2} />
+                    </div>
+                    <div className="more-container">
+                        <Manga_carousel title="More" mangalist={manglist3} />
+                    </div>
+                </div>
             </div>
         </>
     )

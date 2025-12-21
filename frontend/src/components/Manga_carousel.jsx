@@ -3,7 +3,7 @@ import Manga_card from "./Manga_card";
 
 import "../styles/manga_carousel.css";
 
-export default function Manga_carousel({ mangalist, itemsToShow = 5}) {
+export default function Manga_carousel({ title, mangalist, itemsToShow = 5}) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
 
@@ -22,7 +22,7 @@ export default function Manga_carousel({ mangalist, itemsToShow = 5}) {
     return (
         <div className="custom-carousel">
             <div className="carousel-header">
-                <h2>Featured Mangas</h2>
+                <h2>{title}</h2>
                 <div className="carousel-controls">
                 <button onClick={prevSlide} className="carousel-btn">
                     &lt;
