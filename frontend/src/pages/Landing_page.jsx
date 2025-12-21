@@ -17,7 +17,7 @@ export default function Landing_page() {
         
         <div className="top-manga-display">
 
-          <Manga_carousel mangalist={topMangas} />
+          <Manga_carousel title="Featured Mangas" mangalist={topMangas} />
 
           <h2>Popular Mangas</h2>
 

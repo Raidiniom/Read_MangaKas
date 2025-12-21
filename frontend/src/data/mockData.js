@@ -474,6 +474,28 @@ export const getMangaById = (id) => {
   return mockMangas.find(manga => manga.id === id) || null;
 };
 
+export const getRandomMangas = (limit = 10, allowDuplicates = false) => {
+  if (limit <= 0) return [];
+  
+  if (!allowDuplicates) {
+    // Shuffle the array and return first 'limit' items
+    const shuffled = [...mockMangas]
+      .map(value => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value);
+    
+    return shuffled.slice(0, Math.min(limit, mockMangas.length));
+  } else {
+    // Allow duplicates by randomly selecting each time
+    const result = [];
+    for (let i = 0; i < limit; i++) {
+      const randomIndex = Math.floor(Math.random() * mockMangas.length);
+      result.push(mockMangas[randomIndex]);
+    }
+    return result;
+  }
+};
+
 export const searchMangas = (query, limit) => {
   if (!query) return mockMangas.slice(0, limit);
   

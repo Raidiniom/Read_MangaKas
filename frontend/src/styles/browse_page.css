@@ -23,3 +23,23 @@
     );
   pointer-events: none;
 }
+
+.browse-container {
+  border: solid var(--border) 1px;
+  border-radius: 15px;
+  background-color: var(--surface);
+  padding: 10px;
+  margin: 15px;
+}
+
+.trending-container {
+  /*  */
+}
+
+.popular-container {
+  /*  */
+}
+
+.more-container {
+  /*  */
+}
