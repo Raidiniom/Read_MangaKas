@@ -1,0 +1,33 @@
+.manga-body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    min-height: 100vh;
+}
+
+.chapter-container {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chapter-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--primary), 
+        var(--accent)
+    );
+}
