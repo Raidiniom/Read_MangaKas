@@ -1,8 +1,8 @@
-export default function Chapter_bar() {
+export default function Chapter_page() {
 
     return (
         <>
-            <div className="bar-body">
+            <div className="chapter-body">
                 {/*  */}
             </div>
         </>
