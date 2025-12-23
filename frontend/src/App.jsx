@@ -7,6 +7,7 @@ import Profile_page from './pages/Profile_page'
 import Manga_Page from './pages/Manga_page'
 import Settings_page from './pages/Settings_page'
 import Chapter_page from './pages/Chapter_page'
+import Author_page from './pages/Author_page'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
         <Route path='/settings' element={<Settings_page />} />
         <Route path='/manga/:title' element={<Manga_Page />} />
         <Route path='/manga/:title/chapter/:chapterNumber' element={<Chapter_page />} />
+        <Route path='/author/:authorName' element={<Author_page />} />
       </Routes>
     </>
   )

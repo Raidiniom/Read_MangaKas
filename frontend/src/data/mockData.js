@@ -512,3 +512,13 @@ export const searchMangas = (query, limit) => {
     )
     .slice(0, limit);
 };
+
+export const searchByAuthor = (authorName) => {
+  if (!authorName) return [];
+  
+  const lowerAuthorName = authorName.toLowerCase();
+  
+  return mockMangas.filter(manga => 
+    manga.author.toLowerCase().includes(lowerAuthorName)
+  );
+};
