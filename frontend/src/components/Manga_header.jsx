@@ -1,6 +1,7 @@
 import "../styles/manga_header.css";
 
 import { getMangaById } from "../data/mockData";
+import { Link } from "react-router-dom";
 
 export default function Manga_header({ manga_id }) {
     const manga = getMangaById(manga_id);
@@ -15,7 +16,9 @@ export default function Manga_header({ manga_id }) {
                 <div className="manga-details">
                     <h1 className="manga-titleEn">{manga.title}</h1>
                     <h2 className="manga-titleJp">{manga.title_jp}</h2>
-                    <h3 className="manga-author">{manga.author}</h3>
+                    <Link className="author-link" to={`/author/${encodeURIComponent(manga.author)}`}>
+                        <h3 className="manga-author">{manga.author}</h3>
+                    </Link>
                     <p className="manga-description">{manga.description}</p>
 
                     <div className="manga-stats">

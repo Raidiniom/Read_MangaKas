@@ -97,6 +97,11 @@
     padding-bottom: 10px;
 }
 
+.author-link {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
 .manga-author {
     display: flex;
     gap: 8px;
