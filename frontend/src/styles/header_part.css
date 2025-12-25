@@ -28,6 +28,12 @@
   letter-spacing: 0.5px;
 }
 
+.profile-button {
+  background-color: var(--text-muted);
+  border: solid var(--border) 1px;
+  border-radius: 100px;
+}
+
 .routes-container {
   display: flex;
   gap: 1rem;

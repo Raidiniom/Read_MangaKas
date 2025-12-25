@@ -522,3 +522,19 @@ export const searchByAuthor = (authorName) => {
     manga.author.toLowerCase().includes(lowerAuthorName)
   );
 };
+
+export const searchByTag = (tag) => {
+  if (!tag?.trim()) return [];
+
+  const lowerTag = tag.toLowerCase().trim();
+
+  return mockMangas.filter(manga => {
+    // Check if tags exist and is an array
+    if (!Array.isArray(manga.tags)) return false;
+    
+    return manga.tags.some(mangaTag => {
+      if (typeof mangaTag !== 'string') return false;
+      return mangaTag.toLowerCase().trim() === lowerTag;
+    });
+  });
+};

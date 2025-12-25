@@ -8,6 +8,7 @@ import Manga_Page from './pages/Manga_page'
 import Settings_page from './pages/Settings_page'
 import Chapter_page from './pages/Chapter_page'
 import Author_page from './pages/Author_page'
+import Tag_page from './pages/Tag_page'
 
 function App() {
 
@@ -22,8 +23,6 @@ function App() {
         <Link to="/browse">Browse</Link> |{" "}
         <Link to="/profile">Profile</Link> |{" "}
         <Link to="/settings">Settings</Link> |{" "}
-        <Link to="/manga/:title">Manga</Link> |{" "}
-        <Link to="/manga/:title/chapter/:chapterNumber">Chapter</Link> |{" "}
       </div>
       
       <Routes>
@@ -34,8 +33,9 @@ function App() {
         <Route path='/profile' element={<Profile_page />} />
         <Route path='/settings' element={<Settings_page />} />
         <Route path='/manga/:title' element={<Manga_Page />} />
-        <Route path='/manga/:title/chapter/:chapterNumber' element={<Chapter_page />} />
+        <Route path='/manga/:title/chapter/:language/:chapterNumber' element={<Chapter_page />} />
         <Route path='/author/:authorName' element={<Author_page />} />
+        <Route path='/tag/:tag' element={<Tag_page />} />
       </Routes>
     </>
   )
