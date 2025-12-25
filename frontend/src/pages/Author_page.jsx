@@ -1,24 +1,34 @@
-
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { searchByAuthor } from "../data/mockData";
 import Manga_card from "../components/Manga_card";
 
+import "../styles/author_page.css"
+
 export default function Author_page() {
-    const { authorName } = useParams(); // Get from URL
+    const { authorName } = useParams();
     const authorMangas = searchByAuthor(authorName);
-
-    console.log(authorMangas)
-
-    // Optional: handle URL decoding for special characters
     const displayName = decodeURIComponent(authorName || "");
 
-    if (!authorName) {
-        return <div>No author specified</div>;
-    }
+    const authlinks = [
+        "#",
+        "#",
+        "#",
+    ]
 
-    return (
+return (    
         <div className="author-body">
-            <h1>Works by {displayName}</h1>
+            <div className="author-details">
+                <img src="/profile_button.png" alt="" className="author-pic" />
+                <h2 className="author-name">{displayName}</h2>
+
+                <div className="author-links">
+                    {authlinks.map((link, index) => (
+                        <Link key={index} to={link}>link</Link>
+                    ))}
+                </div>
+            </div>
+            
+            <h2>Works</h2>
             <div className="manga-grid">
                 {authorMangas.map((manga, index) => (
                     <Manga_card key={index} manga_id={manga.id} />

@@ -3,7 +3,6 @@ import Manga_carousel from "../components/Manga_carousel";
 import "../styles/browse_page.css";
 
 import { getRandomMangas } from "../data/mockData"; 
-import Search_bar from "../components/Search_bar";
 
 export default function Browse_page() {
     const manglist1 = getRandomMangas(15)

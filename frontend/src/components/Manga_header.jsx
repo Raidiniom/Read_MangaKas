@@ -30,7 +30,9 @@ export default function Manga_header({ manga_id }) {
                         <h3>Tag/s</h3>
                         <div className="manga-tags">
                             {manga.tags.map((tag, index) => (
-                                <span key={index} className="manga-tag">{tag}</span>
+                                <Link to={`/tag/${tag}`} key={index}>
+                                    <span className="manga-tag">{tag}</span>
+                                </Link>
                             ))}
                         </div>
                     </div>
