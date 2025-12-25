@@ -1,5 +1,25 @@
 import styled from "styled-components";
 
+import { Link } from "react-router-dom";
+import { getMangaById } from "../data/mockData"
+
+export default function Manga_card({ manga_id }) {
+  const manga = getMangaById(manga_id);
+
+  return (
+    <Link to={`/manga/${manga?.slug}`} style={{ textDecoration: 'none' }}>
+      <Card>
+        <Cover src={manga?.cover} alt={`${manga?.title} Cover`} />
+        <Info>
+          <Title>{manga?.title}</Title>
+          <Description>{manga?.description}</Description>
+        </Info>
+      </Card>
+    </Link>
+    
+  );
+}
+
 const Card = styled.div`
   background-color: var(--surface);
   border-radius: 12px;
@@ -45,15 +65,3 @@ const Description = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
-
-export default function MangaCard({ title, cover, description }) {
-  return (
-    <Card>
-      <Cover src={cover} alt={title} />
-      <Info>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-      </Info>
-    </Card>
-  );
-}

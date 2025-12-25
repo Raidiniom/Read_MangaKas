@@ -1,0 +1,10 @@
+.bar-body {
+    background-color: var(--surface);
+    padding: 5px;
+    border: solid var(--border) 1px;
+    border-radius: 6px;
+}
+
+.bar-body:hover {
+    background-color: var(--text-muted);
+}

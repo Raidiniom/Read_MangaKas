@@ -1,0 +1,31 @@
+/* Manga_bar Component - Simple Version */
+.manga-bar-link {
+  text-decoration: none;
+  display: block;
+}
+
+.manga-bar-simple {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+}
+
+.manga-bar-simple:hover {
+  background: rgba(149, 44, 210, 0.05);
+  border-color: var(--primary);
+}
+
+.manga-title-simple {
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.manga-bar-simple:hover .manga-title-simple {
+  color: var(--primary);
+}

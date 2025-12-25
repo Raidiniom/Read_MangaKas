@@ -1,0 +1,221 @@
+.header-body {
+    display: flex;
+    padding: 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, 
+        rgba(26, 26, 26, 0.95) 0%, 
+        rgba(40, 40, 40, 0.9) 100%
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    gap: 30px;
+    margin: 5px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        var(--primary), 
+        var(--accent), 
+        var(--primary)
+    );
+}
+
+.manga-thumbnail {
+    flex-shrink: 0;
+    width: 280px;
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 3px solid var(--primary);
+    box-shadow: 
+        0 15px 35px rgba(149, 44, 210, 0.2),
+        0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.manga-thumbnail:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0 20px 50px rgba(149, 44, 210, 0.3),
+        0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.manga-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.manga-thumbnail:hover img {
+    transform: scale(1.05);
+}
+
+.manga-details {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.manga-titleEn {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: white;
+    margin: 0;
+    line-height: 1.1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, 
+        #ffffff 0%, 
+        var(--primary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.manga-titleJp {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-weight: 500;
+    font-style: italic;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
+}
+
+.author-link {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.manga-author {
+    display: flex;
+    gap: 8px;
+}
+
+.manga-author::before {
+    content: "Author:";
+}
+
+.manga-author:hover {
+    color: var(--primary-hover);
+}
+
+.manga-author:active {
+    transform: translateY(-1px);
+}
+
+.manga-description {
+    font-size: 1.1rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 5px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.manga-stats {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.manga-rating, .manga-views {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(149, 44, 210, 0.15);
+    border-radius: 10px;
+    border: 1px solid rgba(149, 44, 210, 0.3);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+}
+
+.manga-rating::before {
+    content: "⭐";
+    font-size: 1.3rem;
+}
+
+.manga-views::before {
+    content: "👁️";
+    font-size: 1.3rem;
+}
+
+.manga-tag-container {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.manga-tag-container h3 {
+    font-size: 1.3rem;
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.manga-tag-container h3::before {
+    content: "#";
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.manga-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.manga-tag {
+    background: linear-gradient(135deg, 
+        var(--primary) 0%, 
+        var(--accent) 100%
+    );
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(149, 44, 210, 0.25);
+}
+
+.manga-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(149, 44, 210, 0.4);
+    background: linear-gradient(135deg, 
+        var(--primary-hover) 1%, 
+        var(--accent) 100%
+    );
+}
+
+.manga-tag:active {
+    transform: translateY(-1px);
+}

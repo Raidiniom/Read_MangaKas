@@ -1,6 +1,7 @@
 /* Custom Carousel Styles */
 .custom-carousel {
   margin: 2rem 0;
+  padding: 10px;
   position: relative;
 }
 

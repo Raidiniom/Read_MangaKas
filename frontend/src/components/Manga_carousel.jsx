@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import MangaCard from "./Manga_Card";
+import Manga_card from "./Manga_card";
+
 import "../styles/manga_carousel.css";
 
-export default function MangaCarousel({ mangalist, itemsToShow = 5}) {
+export default function Manga_carousel({ title, mangalist, itemsToShow = 5}) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
 
@@ -18,17 +19,10 @@ export default function MangaCarousel({ mangalist, itemsToShow = 5}) {
         setCurrentIndex((prevIndex) => prevIndex === 0 ? totalItems - 1 : prevIndex - 1);
     }
 
-    const getVisibleMangas = () => {
-        const start = currentIndex * itemsToShow;
-        const end = start + itemsToShow;
-
-        return mangalist.slice(start, end);
-    }
-
     return (
         <div className="custom-carousel">
             <div className="carousel-header">
-                <h2>Featured Mangas</h2>
+                <h2>{title}</h2>
                 <div className="carousel-controls">
                 <button onClick={prevSlide} className="carousel-btn">
                     &lt;
@@ -42,6 +36,7 @@ export default function MangaCarousel({ mangalist, itemsToShow = 5}) {
                 </div>
             </div>
 
+            {/* MangaCard part */}
             <div className="carousel-container">
                 <div className="carousel-track" style={{
                 transform: `translateX(-${currentIndex * 100}%)`
@@ -50,12 +45,10 @@ export default function MangaCarousel({ mangalist, itemsToShow = 5}) {
                     <div key={slideIndex} className="carousel-slide">
                     {mangalist
                         .slice(slideIndex * itemsToShow, (slideIndex + 1) * itemsToShow)
-                        .map((manga, i) => (
-                        <MangaCard
-                            key={i}
-                            title={manga.title}
-                            cover={manga.cover}
-                            description={manga.description}
+                        .map((manga, index) => (
+                        <Manga_card
+                            key={index}
+                            manga_id={manga.id}
                         />
                         ))}
                     </div>

@@ -1,18 +1,32 @@
 import '../styles/header_part.css'
 import { Link } from 'react-router-dom';
-import Button_login from './Button_login';
-import Button_register from './Button_register';
+import Button from './Button';
 
 const Header_part = () => {
+
+    const isLoggedIn = (sessionID) => {
+        if (sessionID !== null) {
+            return true;
+        }
+
+        return false;
+    }
     
     return (
         <div className='landing-header'>
             <div className='title-container'>
                 <Link to='/'><h1>Read_MangaKas</h1></Link>
             </div>
+            
             <div className='routes-container'>
-                <Link to='/login'><Button_login /></Link>
-                <Link to='/register'><Button_register /></Link>
+                {isLoggedIn(null) ? 
+                    <Link className='profile-button' to='/profile'><img src="/profile_button.png" alt="profile picture" /></Link>
+                :
+                    <>
+                        <Link to='/login'><Button name="login" onClick={null} /></Link>
+                        <Link to='/register'><Button name="register" onClick={null} /></Link>
+                    </>
+                    }
             </div>
         </div>
     )
