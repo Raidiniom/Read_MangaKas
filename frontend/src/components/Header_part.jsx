@@ -19,8 +19,11 @@ const Header_part = () => {
             </div>
             
             <div className='routes-container'>
-                {isLoggedIn(null) ? 
-                    <Link className='profile-button' to='/profile'><img src="/profile_button.png" alt="profile picture" /></Link>
+                {isLoggedIn() ? 
+                    <>
+                        <Link className='profile-button' to='/profile'><img src="/profile_button.png" alt="profile picture" /></Link>
+                        <Link to='/settings' ><img src='' alt='settings' /></Link>
+                    </>
                 :
                     <>
                         <Link to='/login'><Button name="login" onClick={null} /></Link>

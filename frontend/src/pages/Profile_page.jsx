@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Manga_bar from "../components/Manga_bar";
+import Button from "../components/Button";
 
 import "../styles/profile_page.css";
 
@@ -36,12 +37,17 @@ export default function Profile_page() {
         setFavorites(mangas.slice(9, 18));
     }, []);
 
+    const logout_alert = () => {
+        console.log(`[Logout] user ${username} `)
+    }
+
     return (
         <>
             <div className="profile-body">
                 <div className="user-details">
                     <img className="user-profile-img" src="/site_logo.png" alt="Your Profile Picture" />
                     <h1 className="user-name">{username}</h1>
+                    <Button name="Log out" onClick={logout_alert} />
                 </div>
 
                 <div className="manga-container">
