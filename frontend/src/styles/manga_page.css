@@ -1,8 +1,6 @@
 .manga-body {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px 40px;
-    min-height: 100vh;
+    max-width: 100%;
+    padding: 10px 10px;
 }
 
 .chapter-container {
@@ -14,12 +12,12 @@
     border: 1px solid var(--border);
     position: relative;
     overflow: hidden;
-    gap: 10px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
-.chapter-container::after {
+.chapter-container::before {
     content: '';
     position: absolute;
     top: 0;
@@ -30,4 +28,176 @@
         var(--primary), 
         var(--accent)
     );
+}
+
+/* Chapter header */
+.chapter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border);
+}
+
+.chapter-header h2 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.8rem;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: right;
+}
+
+/* Chapters list */
+.chapters-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 300px; /* Prevent layout shift */
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 25px;
+    border-top: 2px solid var(--border);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.pagination-btn {
+    padding: 10px 20px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 100px;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Page numbers */
+.page-numbers {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-number:hover {
+    background: rgba(149, 44, 210, 0.1);
+    border-color: var(--primary);
+}
+
+.page-number.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.ellipsis {
+    color: var(--text-secondary);
+    padding: 0 5px;
+}
+
+/* Per page selector */
+.per-page-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+}
+
+.per-page-selector select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--background);
+    color: var(--text-primary);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.per-page-selector select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .chapter-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .page-info {
+        text-align: left;
+    }
+    
+    .pagination {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .page-numbers {
+        order: 1;
+    }
+    
+    .pagination-btn {
+        order: 2;
+        width: 100%;
+    }
+    
+    .per-page-selector {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-number {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .chapter-container {
+        padding: 20px;
+    }
 }
