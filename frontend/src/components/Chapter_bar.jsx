@@ -11,8 +11,8 @@ export default function Chapter_bar({ manga = {}, chapterNumber, dateUploaded })
 
                 <div className="chapter-links">
                     <h3>{dateUploaded}</h3>
-                    <Link to={`/manga/${manga.slug}/chapter/${chapterNumber}`}>EN</Link>
-                    <Link to={`/manga/${manga.slug}/chapter/${chapterNumber}`}>JP</Link>
+                    <Link to={`/manga/${manga.slug}/chapter/en/${chapterNumber}`}>EN</Link>
+                    <Link to={`/manga/${manga.slug}/chapter/jp/${chapterNumber}`}>JP</Link>
                 </div>
             </div>
         </>
