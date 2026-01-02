@@ -1,7 +1,5 @@
-/* Custom Carousel Styles */
 .custom-carousel {
-  margin: 2rem 0;
-  padding: 10px;
+  padding: 5px;
   position: relative;
 }
 
@@ -9,7 +7,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
 .carousel-controls {
@@ -52,7 +49,7 @@
 
 .carousel-slide {
   display: flex;
-  flex: 0 0 100%;
+  flex: 0 0 50%;
   gap: 1rem;
   padding: 1rem;
   justify-content: space-around;
@@ -62,7 +59,6 @@
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 1rem;
 }
 
 .carousel-dots .dot {
