@@ -1,13 +1,19 @@
+import { Link } from "react-router-dom";
 import "../styles/chapter_bar.css";
 
 
-export default function Chapter_bar({ manga = {}, chapeterNumber }) {
+export default function Chapter_bar({ manga = {}, chapterNumber, dateUploaded }) {
 
     return (
         <>
             <div className="bar-body">
-                <h2>{manga.title}</h2>
-                <h3>Chapter {chapeterNumber}</h3>
+                <h3 className="chapter-number">Chapter {chapterNumber}</h3>
+
+                <div className="chapter-links">
+                    <h3>{dateUploaded}</h3>
+                    <Link to={`/manga/${manga.slug}/chapter/en/${chapterNumber}`}>EN</Link>
+                    <Link to={`/manga/${manga.slug}/chapter/jp/${chapterNumber}`}>JP</Link>
+                </div>
             </div>
         </>
     )

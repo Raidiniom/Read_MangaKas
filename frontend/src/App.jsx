@@ -16,6 +16,9 @@ function App() {
     <>
       {/* Comment this div out if this is in production */}
       <div>
+
+
+
          |{" "}
         <Link to="/">Home</Link> |{" "}
         <Link to="/login">Login</Link> |{" "}
@@ -33,7 +36,7 @@ function App() {
         <Route path='/profile' element={<Profile_page />} />
         <Route path='/settings' element={<Settings_page />} />
         <Route path='/manga/:title' element={<Manga_Page />} />
-        <Route path='/manga/:title/chapter/:language/:chapterNumber' element={<Chapter_page />} />
+        <Route path='/manga/:title/chapter/:lang/:chapterNumber' element={<Chapter_page />} />
         <Route path='/author/:authorName' element={<Author_page />} />
         <Route path='/tag/:tag' element={<Tag_page />} />
       </Routes>
