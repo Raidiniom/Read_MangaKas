@@ -140,5 +140,3 @@ This project is for **educational and personal use**.
 GitHub: [https://github.com/Raidiniom](https://github.com/Raidiniom)
 
 ---
-
-⭐ Feel free to fork, improve, or use this project as a learning reference.
