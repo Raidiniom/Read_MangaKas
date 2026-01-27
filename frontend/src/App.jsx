@@ -16,16 +16,11 @@ function App() {
     <>
       {/* Comment this div out if this is in production */}
       <div>
-
-
-
-         |{" "}
         <Link to="/">Home</Link> |{" "}
         <Link to="/login">Login</Link> |{" "}
         <Link to="/register">Register</Link> |{" "}
         <Link to="/browse">Browse</Link> |{" "}
         <Link to="/profile">Profile</Link> |{" "}
-        <Link to="/settings">Settings</Link> |{" "}
       </div>
       
       <Routes>
