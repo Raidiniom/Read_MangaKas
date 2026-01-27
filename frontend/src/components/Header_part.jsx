@@ -18,22 +18,19 @@ const Header_part = () => {
             </TitleContainer>
 
             <RoutesContainer>
-                {isLoggedIn() ? (
+                {isLoggedIn(null) ? (
                     <>
                         <ProfileButton to="/profile">
                             <img src="/profile_button.png" alt="profile picture" />
                         </ProfileButton>
-                        <Link to="/settings">
-                            <img src="" alt="settings" />
-                        </Link>
                     </>
                 ) : (
                     <>
                         <Link to="/login">
-                            <Button name="login" onClick={null} />
+                            <Button name="Login" onClick={null} />
                         </Link>
                         <Link to="/register">
-                            <Button name="register" onClick={null} />
+                            <Button name="Register" onClick={null} />
                         </Link>
                     </>
                 )}
