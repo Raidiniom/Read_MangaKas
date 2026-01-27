@@ -1,4 +1,4 @@
-import '../styles/header_part.css'
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Button from './Button';
 
@@ -8,31 +8,103 @@ const Header_part = () => {
         if (sessionID !== null) {
             return true;
         }
-
         return false;
-    }
-    
-    return (
-        <div className='landing-header'>
-            <div className='title-container'>
-                <Link to='/'><h1>Read_MangaKas</h1></Link>
-            </div>
-            
-            <div className='routes-container'>
-                {isLoggedIn() ? 
-                    <>
-                        <Link className='profile-button' to='/profile'><img src="/profile_button.png" alt="profile picture" /></Link>
-                        <Link to='/settings' ><img src='' alt='settings' /></Link>
-                    </>
-                :
-                    <>
-                        <Link to='/login'><Button name="login" onClick={null} /></Link>
-                        <Link to='/register'><Button name="register" onClick={null} /></Link>
-                    </>
-                    }
-            </div>
-        </div>
-    )
-}
+    };
 
-export default Header_part
+    return (
+        <LandingHeader>
+            <TitleContainer>
+                <Link to="/"><h1>Read_MangaKas</h1></Link>
+            </TitleContainer>
+
+            <RoutesContainer>
+                {isLoggedIn() ? (
+                    <>
+                        <ProfileButton to="/profile">
+                            <img src="/profile_button.png" alt="profile picture" />
+                        </ProfileButton>
+                        <Link to="/settings">
+                            <img src="" alt="settings" />
+                        </Link>
+                    </>
+                ) : (
+                    <>
+                        <Link to="/login">
+                            <Button name="login" onClick={null} />
+                        </Link>
+                        <Link to="/register">
+                            <Button name="register" onClick={null} />
+                        </Link>
+                    </>
+                )}
+            </RoutesContainer>
+        </LandingHeader>
+    );
+};
+
+const LandingHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: rgba(26, 26, 36, 0.95);
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+`;
+
+const TitleContainer = styled.div`
+  a {
+    text-decoration: none;
+  }
+
+  h1 {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    margin: 0;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+`;
+
+const RoutesContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+  }
+`;
+
+const ProfileButton = styled(Link)`
+  background-color: var(--text-muted);
+  border: solid var(--border) 1px;
+  border-radius: 100px;
+`;
+
+export default Header_part;
