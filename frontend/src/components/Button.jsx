@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const Button = ({ name, onClick }) => {
@@ -6,8 +5,8 @@ const Button = ({ name, onClick }) => {
     <StyledButton onClick={onClick}>
       {name}
     </StyledButton>
-  );
-};
+  )
+}
 
 const StyledButton = styled.button`
   padding: 0.75rem 2rem;

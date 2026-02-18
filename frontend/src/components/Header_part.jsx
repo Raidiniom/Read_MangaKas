@@ -26,12 +26,8 @@ const Header_part = () => {
                     </>
                 ) : (
                     <>
-                        <Link to="/login">
-                            <Button name="Login" onClick={null} />
-                        </Link>
-                        <Link to="/register">
-                            <Button name="Register" onClick={null} />
-                        </Link>
+                        <Button name="Sign In" to="/login" />
+                        <Button name="Sign Up" to="/register" />
                     </>
                 )}
             </RoutesContainer>
@@ -93,7 +89,7 @@ const RoutesContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 200px;
     justify-content: center;
   }
 `;
