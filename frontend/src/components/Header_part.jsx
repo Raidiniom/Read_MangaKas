@@ -18,23 +18,16 @@ const Header_part = () => {
             </TitleContainer>
 
             <RoutesContainer>
-                {isLoggedIn() ? (
+                {isLoggedIn(null) ? (
                     <>
                         <ProfileButton to="/profile">
                             <img src="/profile_button.png" alt="profile picture" />
                         </ProfileButton>
-                        <Link to="/settings">
-                            <img src="" alt="settings" />
-                        </Link>
                     </>
                 ) : (
                     <>
-                        <Link to="/login">
-                            <Button name="login" onClick={null} />
-                        </Link>
-                        <Link to="/register">
-                            <Button name="register" onClick={null} />
-                        </Link>
+                        <Button name="Sign In" to="/login" />
+                        <Button name="Sign Up" to="/register" />
                     </>
                 )}
             </RoutesContainer>
@@ -96,7 +89,7 @@ const RoutesContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 200px;
     justify-content: center;
   }
 `;
