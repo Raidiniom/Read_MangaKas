@@ -18,7 +18,7 @@ const StyledButton = styled.button`
   background: transparent;
   color: var(--text-primary);
   border: 2px solid var(--primary);
-  min-width: 120px;
+  min-width: fit-content;
   
   &:hover:not(:disabled) {
     background: var(--primary);

@@ -72,7 +72,6 @@ export default function Manga_carousel({ title, mangalist, itemsToShow = 5 }) {
 }
 
 const CustomCarousel = styled.div`
-  padding: 5px;
   position: relative;
 `;
 
@@ -124,7 +123,6 @@ const CarouselSlide = styled.div`
   display: flex;
   flex: 0 0 50%;
   gap: 1rem;
-  padding: 1rem;
   justify-content: space-around;
 `;
 

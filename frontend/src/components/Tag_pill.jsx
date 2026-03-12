@@ -1,21 +1,23 @@
 import styled from "styled-components";
 
-const TagPill = ({ tagName, onClick }) => {
+const TagPill = ({ tagName }) => {
     return (
-        <StyledTagPill onClick={onClick}>
+        <StyledTagPill>
             {tagName}
         </StyledTagPill>
     )
 }
 
 const StyledTagPill = styled.div`
-    padding: 0.25rem 0.75rem;
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0.7rem 0.7rem;
     background-color: var(--primary);
     color: var(--text-primary);
-    border-radius: 12px;
+    border-radius: 24px;
     font-size: 14px;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
+    white-space: nowrap;
 
     &:hover {
         background-color: var(--primary-hover);
