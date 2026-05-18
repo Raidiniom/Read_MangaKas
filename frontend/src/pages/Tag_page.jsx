@@ -1,3 +1,4 @@
+import "../styles/tag_page.css";
 import { useParams } from "react-router-dom"
 import { searchByTag } from "../data/mockData";
 import Manga_card from "../components/Manga_card";
@@ -9,7 +10,7 @@ export default function Tag_page() {
     return (
         <>
             <div className="tag-body">
-                <div className="tag-container">
+                <div className="tagged-manga">
                     <h2>{tag}</h2>
                     
                     <div className="manga-grid">

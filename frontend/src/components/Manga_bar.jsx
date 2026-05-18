@@ -18,6 +18,14 @@ const MangaBarLink = styled(Link)`
   display: block;
 `;
 
+const MangaTitleSimple = styled.h3`
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  transition: color 0.2s ease;
+`;
+
 const MangaBarSimple = styled.div`
   background: var(--surface);
   border: 1px solid var(--border);
@@ -34,12 +42,4 @@ const MangaBarSimple = styled.div`
   &:hover ${/* sc-selector */ MangaTitleSimple} {
     color: var(--primary);
   }
-`;
-
-const MangaTitleSimple = styled.h3`
-  color: var(--text-primary);
-  font-size: 15px;
-  font-weight: 500;
-  margin: 0;
-  transition: color 0.2s ease;
 `;
