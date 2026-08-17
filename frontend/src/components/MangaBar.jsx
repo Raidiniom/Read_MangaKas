@@ -1,10 +1,11 @@
+
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export default function Manga_bar({ title }) {
+export default function Manga_bar({ manga }) {
     return (
         <MangaBarLink
-            to={`/manga/${title.toLowerCase().replace(/\s+/g, '-')}`}
+            to={`/manga/${manga.slug}`}
         >
             <MangaBarSimple>
                 <MangaTitleSimple>{title}</MangaTitleSimple>

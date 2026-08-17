@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Manga_header from "../components/Manga_header";
-import Chapter_bar from "../components/Chapter_bar";
+import MangaHeader from "../components/MangaHeader";
+import ChapterBar from "../components/ChapterBar";
 import "../styles/manga_page.css";
 import { getMangaBySlug } from "../data/mockData";
 
-export default function Manga_Page() {
+export default function MangaPage() {
     const { title: slug } = useParams();
     const manga = getMangaBySlug(slug);
     
@@ -49,7 +49,7 @@ export default function Manga_Page() {
 
     return (
         <div className="manga-body">
-            <Manga_header manga_id={manga.id} />
+            <MangaHeader manga_id={manga.id} />
             
             <div className="chapter-container">
                 {/* Header with pagination info */}
@@ -64,7 +64,7 @@ export default function Manga_Page() {
                 {/* Chapters list */}
                 <div className="chapters-list">
                     {currentChapters.map((chapterNum) => (
-                        <Chapter_bar 
+                        <ChapterBar 
                             key={chapterNum} 
                             manga={manga} 
                             chapterNumber={chapterNum} 

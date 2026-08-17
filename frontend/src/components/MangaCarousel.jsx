@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import Manga_card from "./Manga_card";
+import Manga_card from "./MangaCard";
 
-export default function Manga_carousel({ title, mangalist, itemsToShow = 5 }) {
+export default function Manga_carousel({ title, mangalist, itemsToShow = 7 }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
 
@@ -88,9 +88,9 @@ const CarouselControls = styled.div`
 `;
 
 const CarouselBtn = styled.button`
-  background: #333;
-  color: white;
-  border: none;
+  background: var(--surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -99,7 +99,8 @@ const CarouselBtn = styled.button`
   transition: background 0.3s;
 
   &:hover {
-    background: #555;
+    background: var(--primary);
+    border-color: var(--primary);
   }
 `;
 
@@ -121,9 +122,10 @@ const CarouselTrack = styled.div`
 
 const CarouselSlide = styled.div`
   display: flex;
-  flex: 0 0 50%;
+  flex: 0 0 100%;
   gap: 1rem;
-  justify-content: space-around;
+  justify-content: ${({ $itemsToShow }) => ($itemsToShow > 1 ? "space-around" : "center")};
+  flex-wrap: wrap;
 `;
 
 const CarouselDots = styled.div`
@@ -137,8 +139,9 @@ const Dot = styled.button`
   height: 10px;
   border-radius: 50%;
   border: none;
-  background: ${({ $active }) => ($active ? "#333" : "#ccc")};
+  background: ${({ $active }) => ($active ? "var(--primary)" : "var(--border)")};
   cursor: pointer;
   padding: 0;
+  transition: all 0.2s ease;
   transform: ${({ $active }) => ($active ? "scale(1.2)" : "none")};
 `;

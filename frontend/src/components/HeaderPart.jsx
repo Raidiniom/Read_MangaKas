@@ -2,14 +2,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Button from './Button';
 
-const Header_part = () => {
+const HeaderPart = ({ sessionID = null }) => {
 
-    const isLoggedIn = (sessionID) => {
-        if (sessionID !== null) {
-            return true;
-        }
-        return false;
-    };
+    const isLoggedIn = (id) => id !== null && id !== undefined;
 
     return (
         <LandingHeader>
@@ -18,7 +13,7 @@ const Header_part = () => {
             </TitleContainer>
 
             <RoutesContainer>
-                {isLoggedIn(null) ? (
+                {isLoggedIn(sessionID) ? (
                     <>
                         <ProfileButton to="/profile">
                             <img src="/profile_button.png" alt="profile picture" />
@@ -100,4 +95,4 @@ const ProfileButton = styled(Link)`
   border-radius: 100px;
 `;
 
-export default Header_part;
+export default HeaderPart;

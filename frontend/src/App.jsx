@@ -1,19 +1,17 @@
 import { Link, Route, Routes } from 'react-router-dom'
-import Landing_page from './pages/Landing_page'
-import Register_Page from './pages/Register_page'
-import Login_Page from './pages/Login_page'
-import Browse_page from './pages/Browse_page'
-import Profile_page from './pages/Profile_page'
-import Manga_Page from './pages/Manga_page'
-import Chapter_page from './pages/Chapter_page'
-import Author_page from './pages/Author_page'
-import Tag_page from './pages/Tag_page'
+import LandingPage from './pages/LandingPage'
+import RegisterPage from './pages/RegisterPage'
+import LoginPage from './pages/LoginPage'
+import BrowsePage from './pages/BrowsePage'
+import ProfilePage from './pages/ProfilePage'
+import MangaPage from './pages/MangaPage'
+import ChapterPage from './pages/ChapterPage'
+import AuthorPage from './pages/AuthorPage'
+import TagPage from './pages/TagPage'
 
 function App() {
-
   return (
     <>
-      {/* Comment this div out if this is in production */}
       <div>
         <Link to="/">Home</Link> |{" "}
         <Link to="/login">Login</Link> |{" "}
@@ -21,17 +19,17 @@ function App() {
         <Link to="/browse">Browse</Link> |{" "}
         <Link to="/profile">Profile</Link> |{" "}
       </div>
-      
+
       <Routes>
-        <Route path='/' element={<Landing_page />} />
-        <Route path='/register' element={<Register_Page />} />
-        <Route path='/login' element={<Login_Page />} />
-        <Route path='/browse' element={<Browse_page />} />
-        <Route path='/profile' element={<Profile_page />} />
-        <Route path='/manga/:title' element={<Manga_Page />} />
-        <Route path='/manga/:title/chapter/:lang/:chapterNumber' element={<Chapter_page />} />
-        <Route path='/author/:authorName' element={<Author_page />} />
-        <Route path='/tag/:tag' element={<Tag_page />} />
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/register' element={<RegisterPage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/browse' element={<BrowsePage />} />
+        <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/manga/:title' element={<MangaPage />} />
+        <Route path='/manga/:title/chapter/:lang/:chapterNumber' element={<ChapterPage />} />
+        <Route path='/author/:authorName' element={<AuthorPage />} />
+        <Route path='/tag/:tag' element={<TagPage />} />
       </Routes>
     </>
   )

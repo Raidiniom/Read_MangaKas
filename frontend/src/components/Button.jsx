@@ -1,11 +1,19 @@
 import styled from 'styled-components';
 
-const Button = ({ name, onClick }) => {
+const Button = ({ name, onClick, to, disabled }) => {
+  if (to) {
+    return (
+      <StyledButton to={to}>
+        {name}
+      </StyledButton>
+    )
+  }
+
   return (
-    <StyledButton onClick={onClick}>
+    <StyledButton onClick={onClick} disabled={disabled}>
       {name}
     </StyledButton>
-  )
+  );
 }
 
 const StyledButton = styled.button`
@@ -19,6 +27,10 @@ const StyledButton = styled.button`
   color: var(--text-primary);
   border: 2px solid var(--primary);
   min-width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   
   &:hover:not(:disabled) {
     background: var(--primary);

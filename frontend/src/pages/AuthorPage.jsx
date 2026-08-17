@@ -1,9 +1,9 @@
 import { Link, useParams } from "react-router-dom";
 import { searchByAuthor } from "../data/mockData";
-import Manga_card from "../components/Manga_card";
+import MangaCard from "../components/MangaCard";
 import "../styles/author_page.css";
 
-export default function Author_page() {
+export default function AuthorPage() {
     const { authorName } = useParams();
     const authorMangas = searchByAuthor(authorName);
     const displayName = decodeURIComponent(authorName || "");
@@ -60,7 +60,7 @@ export default function Author_page() {
             {authorMangas.length > 0 ? (
                 <div className="manga-grid">
                     {authorMangas.map((manga) => (
-                        <Manga_card key={manga.id} manga_id={manga.id} />
+                        <MangaCard key={manga.id} manga_id={manga.id} />
                     ))}
                 </div>
             ) : (

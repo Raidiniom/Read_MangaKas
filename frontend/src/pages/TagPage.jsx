@@ -1,9 +1,9 @@
 import "../styles/tag_page.css";
 import { useParams } from "react-router-dom"
 import { searchByTag } from "../data/mockData";
-import Manga_card from "../components/Manga_card";
+import MangaCard from "../components/MangaCard";
 
-export default function Tag_page() {
+export default function TagPage() {
     const { tag } = useParams();
     const manga = searchByTag(tag);
     
@@ -15,7 +15,7 @@ export default function Tag_page() {
                     
                     <div className="manga-grid">
                         {manga.map((manga, index) => (
-                            <Manga_card key={index} manga_id={manga.id} />
+                            <MangaCard key={index} manga_id={manga.id} />
                         ))}
                     </div>
                 </div>

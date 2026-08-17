@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import "../styles/login_page.css";
 
-export default function Login_page() {
+export default function LoginPage() {
     
     return (
         <>
@@ -17,7 +17,7 @@ export default function Login_page() {
 
                     <div className="login-field">
                         <label htmlFor="password">Password</label>
-                        <input id="password" className="" type="password" placeholder="******" required/>
+                        <input id="password" className="" type="password" placeholder="******" autoComplete="current-password" required/>
                     </div>
 
                     <button type="submit">Confirm</button>

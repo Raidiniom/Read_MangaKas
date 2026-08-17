@@ -169,7 +169,7 @@ const MangaAuthor = styled.h3`
 
 const MangaDescription = styled.p`
     font-size: 1.1rem;
-    line-height: 1;
+    line-height: 1.6;
     color: rgba(255, 255, 255, 0.85);
     margin: 5px 0;
     padding: 15px;

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 // Hardcoded total pages for simplicity; in a real app, this would come from manga data. plus helped by GenAI
 
-export default function Chapter_page() {
+export default function ChapterPage() {
     const { title: slug, lang: language, chapterNumber: chaptNum } = useParams();
     const manga = getMangaBySlug(slug);
 
@@ -57,6 +57,8 @@ export default function Chapter_page() {
                             <div 
                                 className="nav-btn prev-btn" 
                                 onClick={goToPreviousPage}
+                                role="button"
+                                aria-label="Previous Page"
                                 title="←"
                             >
                             </div>
@@ -64,6 +66,8 @@ export default function Chapter_page() {
                             <div 
                                 className="nav-btn next-btn" 
                                 onClick={goToNextPage}
+                                role="button"
+                                aria-label="Next Page"
                                 title="→"
                             >
                             </div>

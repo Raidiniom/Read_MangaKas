@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/register_page.css"
 
-export default function Register_page() {
+export default function RegisterPage() {
     const [password, setPassword] = useState("");
     const [strength, setStrength] = useState({
         score: 0,
