@@ -3,3 +3,9 @@
     align-items: center;
     padding: 10px;
 }
+
+.tagged-manga h2 {
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}

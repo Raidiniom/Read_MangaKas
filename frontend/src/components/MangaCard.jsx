@@ -9,7 +9,13 @@ export default function Manga_card({ manga_id }) {
   return (
     <Link to={`/manga/${manga?.slug}`} style={{ textDecoration: 'none' }}>
       <Card>
-        <Cover src={manga?.cover} alt={`${manga?.title} Cover`} />
+        <Cover 
+          src={manga?.cover} 
+          alt={`${manga?.title} Cover`}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = "/covers/aot.jpg";
+          }} />
         <Info>
           <Title>{manga?.title}</Title>
           <Description>{manga?.description}</Description>
@@ -40,6 +46,7 @@ const Cover = styled.img`
   width: 100%;
   height: 250px;
   object-fit: cover;
+  background-color: var(--background);
 `;
 
 const Info = styled.div`

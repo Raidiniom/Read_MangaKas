@@ -18,6 +18,7 @@ function App() {
         <Link to="/register">Register</Link> |{" "}
         <Link to="/browse">Browse</Link> |{" "}
         <Link to="/profile">Profile</Link> |{" "}
+        <Link to="/tag/:tag">Tag</Link> |{" "}
       </div>
 
       <Routes>

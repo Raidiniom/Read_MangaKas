@@ -16,7 +16,13 @@ const HeaderPart = ({ sessionID = null }) => {
                 {isLoggedIn(sessionID) ? (
                     <>
                         <ProfileButton to="/profile">
-                            <img src="/profile_button.png" alt="profile picture" />
+                            <img 
+                              src="/profile_button.png" 
+                              alt="profile picture"
+                              onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src = "/profile_button.png";
+                            }} />
                         </ProfileButton>
                     </>
                 ) : (

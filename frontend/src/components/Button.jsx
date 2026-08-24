@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Button = ({ name, onClick, to, disabled }) => {
   if (to) {
     return (
-      <StyledButton to={to}>
+      <StyledButton as={Link} to={to}>
         {name}
       </StyledButton>
     )

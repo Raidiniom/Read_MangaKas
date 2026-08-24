@@ -11,6 +11,10 @@ export default function Manga_header({ manga_id }) {
                 <img
                     src={manga.cover || ""}
                     alt={manga.title || "Manga Thumbnail"}
+                    onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "/covers/aot.jpg";
+                    }}
                 />
             </MangaThumbnail>
 
