@@ -61,6 +61,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 0; /* stop this grid item from growing to fit the carousels' unwrapped content */
 }
 
 /* Tags */
@@ -96,6 +97,13 @@
   border-radius: 16px;
   background: var(--surface);
   padding: 20px;
+}
+
+.continue-reading,
+.unread,
+.dropped {
+  min-width: 0; /* allow these flex items to shrink instead of forcing horizontal overflow */
+  overflow: hidden; /* belt-and-suspenders: clip anything that still tries to escape */
 }
 
 /* Responsive */
