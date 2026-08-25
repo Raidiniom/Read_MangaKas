@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Manga_card from "./MangaCard";
 
-export default function Manga_carousel({ title, mangalist, itemsToShow = 7 }) {
+export default function Manga_carousel({ title, mangalist, itemsToShow = 5 }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [totalItems, setTotalItems] = useState(0);
 
@@ -124,8 +124,8 @@ const CarouselSlide = styled.div`
   display: flex;
   flex: 0 0 100%;
   gap: 1rem;
-  justify-content: ${({ $itemsToShow }) => ($itemsToShow > 1 ? "space-around" : "center")};
-  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-wrap: nowrap;
 `;
 
 const CarouselDots = styled.div`
