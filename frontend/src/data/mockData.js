@@ -503,7 +503,6 @@ export const searchMangas = (query, limit) => {
 
   return mockMangas
     .filter(manga => 
-      manga.id ||
       manga.title.toLowerCase().includes(lowerQuery) ||
       manga.title_jp?.toLowerCase().includes(lowerQuery) ||
       manga.author?.toLowerCase().includes(lowerQuery) ||

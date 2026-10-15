@@ -3,11 +3,16 @@ import { Link } from 'react-router-dom';
 import "../styles/login_page.css";
 
 export default function LoginPage() {
-    
+    const handleSubmit = (e) => {
+        // Prevent the browser's default submit, which reloads the page
+        e.preventDefault();
+        // TODO: send login to the backend once /auth routes exist
+    };
+
     return (
         <>
             <div className="login-body">
-                <form className="login-form">
+                <form className="login-form" onSubmit={handleSubmit}>
                     <h1 className="login-title">Login</h1>
 
                     <div className="login-field">

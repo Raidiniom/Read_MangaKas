@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/register_page.css"
 
 export default function RegisterPage() {
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [strength, setStrength] = useState({
         score: 0,
         label: "None",
@@ -64,10 +66,19 @@ export default function RegisterPage() {
         return (strength.score / maxScore) * 100;
     };
 
+    const passwordsMismatch = confirmPassword.length > 0 && confirmPassword !== password;
+
+    const handleSubmit = (e) => {
+        // Prevent the browser's default submit, which reloads the page
+        e.preventDefault();
+        if (password !== confirmPassword) return;
+        // TODO: send registration to the backend once /auth routes exist
+    };
+
     return (
         <>
             <div className="register-body">
-                <form className="register-form">
+                <form className="register-form" onSubmit={handleSubmit}>
                     <h1 className="register-title">Register</h1>
                     
                     <div className="register-field">
@@ -124,9 +135,20 @@ export default function RegisterPage() {
                         )}
                     </div>
                     
-                    <div className="register-field">
+                    <div className={`register-field ${passwordsMismatch ? "error" : ""}`}>
                         <label htmlFor="confirm_password">Confirm Password</label>
-                        <input id="confirm_password" className="register-input" type="password" placeholder="******" required/>
+                        <input
+                            id="confirm_password"
+                            className="register-input"
+                            type="password"
+                            placeholder="******"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            required
+                        />
+                        {passwordsMismatch && (
+                            <span className="error-message">Passwords do not match</span>
+                        )}
                     </div>
                     
                     <div className="register-field">
@@ -136,7 +158,7 @@ export default function RegisterPage() {
 
                     <button type="submit">Create Account</button>
                     
-                    <p>Already have an account? <a href="/login">Sign in</a></p>
+                    <p>Already have an account? <Link to="/login">Sign in</Link></p>
                 </form>
             </div>
         </>

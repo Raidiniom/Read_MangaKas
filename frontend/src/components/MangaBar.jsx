@@ -8,7 +8,7 @@ export default function Manga_bar({ manga }) {
             to={`/manga/${manga.slug}`}
         >
             <MangaBarSimple>
-                <MangaTitleSimple>{title}</MangaTitleSimple>
+                <MangaTitleSimple>{manga.title}</MangaTitleSimple>
             </MangaBarSimple>
         </MangaBarLink>
     );

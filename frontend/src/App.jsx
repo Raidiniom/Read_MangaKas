@@ -12,14 +12,17 @@ import TagPage from './pages/TagPage'
 function App() {
   return (
     <>
-      <div>
-        <Link to="/">Home</Link> |{" "}
-        <Link to="/login">Login</Link> |{" "}
-        <Link to="/register">Register</Link> |{" "}
-        <Link to="/browse">Browse</Link> |{" "}
-        <Link to="/profile">Profile</Link> |{" "}
-        <Link to="/tag/:tag">Tag</Link> |{" "}
-      </div>
+      {/* Dev-only navigation; hidden in production builds */}
+      {import.meta.env.DEV && (
+        <div>
+          <Link to="/">Home</Link> |{" "}
+          <Link to="/login">Login</Link> |{" "}
+          <Link to="/register">Register</Link> |{" "}
+          <Link to="/browse">Browse</Link> |{" "}
+          <Link to="/profile">Profile</Link> |{" "}
+          <Link to="/tag/action">Tag</Link>
+        </div>
+      )}
 
       <Routes>
         <Route path='/' element={<LandingPage />} />
