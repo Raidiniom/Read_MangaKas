@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "../styles/profile_page.css";
 import Button from "../components/Button";
 import TagPill from "../components/TagPill";
@@ -9,9 +10,10 @@ export default function ProfilePage() {
     const placeholderUser = "Reader12345!@#$"
     const placeholderPFP = "/site_logo.png"
 
-    const bookmarkedMangas1 = getRandomMangas(10)
-    const bookmarkedMangas2 = getRandomMangas(10)
-    const bookmarkedMangas3 = getRandomMangas(10)
+    // Stable random lists so they don't reshuffle on every re-render
+    const [bookmarkedMangas1] = useState(() => getRandomMangas(10))
+    const [bookmarkedMangas2] = useState(() => getRandomMangas(10))
+    const [bookmarkedMangas3] = useState(() => getRandomMangas(10))
 
     const tags_array = [
         "Isekai",
